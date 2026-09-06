@@ -1,12 +1,18 @@
 # -*- coding: utf-8 -*-
 """Home."""
+import art, video
 
-HOME = """
+HOME = f"""
 <section class="hero">
   <div class="wrap">
-    <p class="kicker">Inkt, spijt en wat er daarna kan</p>
-    <h1>Een tattoo verandert niet, de drager wel</h1>
-    <p class="intro">De meeste mensen met tattoospijt willen niet van alles af. Het gaat om die ene naam, dat ene vlak of de plek waar het staat. Deze site zet op een rij waar spijt vandaan komt, wat de opties zijn en waar in de Randstad laserwerk wordt gedaan.</p>
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">Inkt, spijt en wat er daarna kan</p>
+        <h1>Een tattoo verandert niet, de drager wel</h1>
+        <p class="intro">De meeste mensen met tattoospijt willen niet van alles af. Het gaat om die ene naam, dat ene vlak of de plek waar het staat. Deze site zet op een rij waar spijt vandaan komt, wat de opties zijn en waar in de Randstad laserwerk wordt gedaan.</p>
+      </div>
+      {art.fig(art.totem(), "Vijf motieven uit de totem. Rechts het pigment dat sessie na sessie dunner wordt.", "plainfig")}
+    </div>
   </div>
 </section>
 
@@ -24,6 +30,8 @@ HOME = """
         <div class="row"><div class="n">05</div><div><a href="/spijt/betekenis/"><h3>Betekenis die is verschoven</h3></a><p>Een symbool dat destijds ergens voor stond en nu iets anders oproept.</p></div></div>
       </div>
 
+      {art.fig(art.vervagen(), "Een lasersessie breekt het pigment in kleinere deeltjes. Het lichaam voert die af, waardoor de tekening per sessie lichter wordt.")}
+
       <h2>Vier richtingen</h2>
       <p>Bij spijt bestaan er grofweg vier uitkomsten. Ze sluiten elkaar niet uit: veel trajecten beginnen met vervagen en eindigen bij nieuw werk.</p>
       <div class="two">
@@ -36,6 +44,8 @@ HOME = """
       <h2>Waar het gedaan wordt</h2>
       <p>De laserbehandelingen waar deze site naar verwijst, gebeuren bij Tattoo No More. Drie vestigingen in de Randstad, elk met een vaste behandelaar die het hele traject doet: <a href="/amsterdam/">Amsterdam</a> aan de Bilderdijkstraat, <a href="/den-haag/">Den Haag</a> aan de Schuifmaat en <a href="/rotterdam/">Rotterdam</a> aan de Oudedijk. De praktijk begon eind jaren negentig in Rotterdam en doet sindsdien niets anders dan pigment weghalen.</p>
 
+      {art.fig(art.kaart(), "Drie vestigingen in de Randstad, elk met een vaste behandelaar.")}
+
       <div class="pull">Wie alleen ruimte wil maken voor nieuw werk, is er vaak met drie tot vijf sessies. Volledig weg vraagt meestal acht tot twaalf.</div>
 
       <h2>Voordat er iets gebeurt</h2>
@@ -45,6 +55,8 @@ HOME = """
         <li><strong>Houd rekening met de zon.</strong> Drie weken voor en na een sessie geen zonnebank en zo min mogelijk fel zonlicht op de plek.</li>
         <li><strong>Plan ruim.</strong> Tussen twee sessies zitten weken, omdat het lichaam de kapotgeschoten inkt zelf afvoert.</li>
       </ol>
+
+      {video.embed("duur")}
 
       <div class="cta">
         <p>Afspraken en actuele beschikbaarheid lopen via de kliniek zelf.</p>

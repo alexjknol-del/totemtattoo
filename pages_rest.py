@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Verhalen, vragen en juridische pagina's."""
+import art, video
 
 VERHALEN = [
     {"slug": "waarom-de-eerste-tattoo-zelden-de-laatste-is",
@@ -73,9 +74,12 @@ def verhalen_index():
   <p>{v["desc"]}</p>
 </div></div>""")
     return ('<p class="intro">Langere stukken over inkt, keuzes en wat er daarna gebeurt.</p>\n'
-            '<div class="rows">\n' + "\n".join(rows) + "\n</div>")
+            '<div class="rows">\n' + "\n".join(rows) + "\n</div>\n"
+            + art.fig(art.ornament(), "", "plainfig")
+            + "<h2>In de media</h2>\n<p>Landelijke en regionale items over het weghalen van tattoos die het werk in de weg zitten.</p>\n"
+            + video.strip(["telegraaf","rtl","nu","jeugdjournaal","powned","rijnmond"], "Uitzendingen"))
 
-FAQ = """
+FAQ = f"""
 <p class="intro">De vragen die bij intakes het vaakst terugkomen, kort beantwoord.</p>
 
 <h2>Over het resultaat</h2>
@@ -120,9 +124,11 @@ Nee. Werk groter dan A5, eerder behandelde tattoos en bepaalde kleurpigmenten va
 
 <p><strong>Hoe wordt een afspraak gemaakt?</strong><br>
 Via de kliniek zelf, op <a href="https://tattoonomore.nl/">tattoonomore.nl</a>.</p>
+
+{video.strip(["pijn","aantal","sporten","risico"], "Video's bij deze vragen")}
 """
 
-CONTACT = """
+CONTACT = f"""
 <p class="intro">Totem Tattoo is een informatieve site. Afspraken lopen via de kliniek.</p>
 
 <h2>Over deze site</h2>
@@ -139,6 +145,8 @@ CONTACT = """
 
 <h2>Medische vragen</h2>
 <p>Bij huidaandoeningen, eerdere littekenvorming, zwangerschap, medicijngebruik dat de huid lichtgevoelig maakt of twijfel over een moedervlek in het gebied geldt eerst het oordeel van een huisarts of dermatoloog.</p>
+
+{video.embed("consult")}
 """
 
 PRIVACY = """

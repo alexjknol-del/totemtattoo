@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 """Spijt, symboliek en stijlen."""
+import art, video
 
-SPIJT_INDEX = """
+SPIJT_INDEX = f"""
 <p class="intro">Spijt komt zelden uit het niets. Vijf oorzaken komen bij intakes steeds terug, en elke oorzaak leidt naar een andere oplossing.</p>
+
+{art.fig(art.plaatsing(), "De plekken die het meest opvallen en het vaakst terugkomen bij spijt.", "narrow")}
+
 
 <div class="rows">
   <div class="row"><div class="n">01</div><div><a href="/spijt/namen/"><h3>Namen en exen</h3></a><p>Klein van omvang, groot in dagelijkse hinder.</p></div></div>
@@ -31,8 +35,11 @@ SPIJT_INDEX = """
 </div>
 """
 
-NAMEN = """
+NAMEN = f"""
 <p class="intro">Namen zijn het klassieke voorbeeld van tattoospijt, en tegelijk het meest dankbare werk om weg te halen: weinig oppervlak, meestal zwart, vaak in een lettertype met dunne lijnen.</p>
+
+{art.fig(art.naam(), "Een naam beslaat weinig oppervlak, waardoor het traject korter is dan bij een groot vlak.")}
+
 
 <h2>Waarom juist namen</h2>
 <p>Een naam is een belofte in inkt. Zolang de relatie duurt, is dat een sieraad; daarna wordt het een mededeling aan iedereen die het ziet. Anders dan bij een afbeelding valt er weinig te interpreteren, en dat maakt de behoefte om er iets aan te doen groot.</p>
@@ -55,10 +62,15 @@ NAMEN = """
 <div class="pull">Een naam die met dunne lijnen is gezet, is vaak binnen een handvol sessies niet meer te lezen, ook al is de huid dan nog niet helemaal schoon.</div>
 
 <p>Wie wil weten hoeveel sessies realistisch zijn, vindt de factoren bij <a href="/opties/sessies/">aantal sessies</a>.</p>
+
+{video.embed("coveren")}
 """
 
-PLAATSING = """
+PLAATSING = f"""
 <p class="intro">Dezelfde tattoo geeft op de bovenarm nauwelijks reactie en op de hals dagelijks. Plaatsing bepaalt hoe zichtbaar het werk is, en ook hoe snel het weer weg kan.</p>
+
+{art.fig(art.plaatsing(), "Hals, handen en onderarmen vallen op bij vrijwel elke kleding.", "narrow")}
+
 
 <h2>Zichtbaarheid</h2>
 <p>Hals, handen, vingers en gezicht zijn niet af te dekken met kleding. Wie in een omgeving werkt waar dat vragen oproept, merkt dat elke dag opnieuw. Dat maakt de plek een zwaardere reden voor spijt dan het ontwerp zelf: het werk kan mooi zijn en toch in de weg zitten.</p>
@@ -148,8 +160,11 @@ BETEKENIS = """
 <p>Wie na het weghalen opnieuw iets wil laten zetten, doet er goed aan de betekenis van het nieuwe motief na te lopen bij iemand die er verstand van heeft. Achtergrond bij veelgekozen motieven staat bij <a href="/symboliek/">symboliek</a>.</p>
 """
 
-SYMBOLIEK_INDEX = """
+SYMBOLIEK_INDEX = f"""
 <p class="intro">Veel gekozen motieven hebben een geschiedenis die verder gaat dan de tekening. Deze pagina's geven achtergrond, zonder te bepalen wat iemand zelf in een symbool ziet.</p>
+
+{art.fig(art.symbolen(), "Zes motieven die in vrijwel elke studio terugkomen.")}
+
 
 <div class="rows">
   <div class="row"><div class="n">01</div><div><a href="/symboliek/dieren/"><h3>Dieren en totems</h3></a><p>Wolf, slang, adelaar en beer: waar de associaties vandaan komen.</p></div></div>
@@ -164,8 +179,11 @@ SYMBOLIEK_INDEX = """
 <div class="pull">Een symbool zegt zelden maar een ding. Het verschil zit in wie het draagt, waar, en in welke tijd.</div>
 """
 
-DIEREN = """
+DIEREN = f"""
 <p class="intro">Dieren zijn het grootste motiefgebied in de tattoowereld. De associaties komen uit een mengeling van volksverhalen, heraldiek en populaire cultuur, en verschillen sterk per regio.</p>
+
+{art.fig(art.symbolen(), "Dieren staan zelden op zichzelf, ze dragen de betekenis van een verhaal mee.")}
+
 
 <h2>Veelgekozen dieren</h2>
 <table>
@@ -279,8 +297,11 @@ PAGES = [
      "body": TEKST},
 ]
 
-STIJLEN_INDEX = """
+STIJLEN_INDEX = f"""
 <p class="intro">Een stijl bepaalt niet alleen hoe het werk er nu uitziet, maar ook hoe het er over tien jaar bij ligt en hoe makkelijk het weer weg te halen is.</p>
+
+{art.fig(art.stijlen(), "Fijn lijnwerk, zwartwerk en kleurwerk verouderen elk op hun eigen manier.")}
+
 
 <div class="rows">
   <div class="row"><div class="n">01</div><div><a href="/stijlen/fine-line/"><h3>Fine line</h3></a><p>Dunne lijnen, weinig pigment, snelle vervaging.</p></div></div>
@@ -301,8 +322,11 @@ STIJLEN_INDEX = """
 <div class="pull">Het werk dat het langst mooi blijft, is meestal het werk dat het meeste geduld vraagt als het weg moet.</div>
 """
 
-FINELINE = """
+FINELINE = f"""
 <p class="intro">Fijn lijnwerk is het populairste werk van het afgelopen decennium: dunne, zwarte lijnen zonder vulling, vaak klein en op zichtbare plekken.</p>
+
+{art.fig(art.stijlen(), "Fijn lijnwerk links: weinig pigment per lijn, dus gevoelig voor uitlopen.")}
+
 
 <h2>Wat het is</h2>
 <p>Fine line wordt gezet met een enkele naald of een kleine groepering, met weinig pigment per lijn. Daardoor oogt het licht en grafisch. Dat is meteen de kwetsbaarheid: er zit weinig marge tussen een lijn die staat en een lijn die verdwijnt.</p>
@@ -346,8 +370,11 @@ BLACKWORK = """
 <p>Meer over die tussenstap bij <a href="/opties/vervagen/">vervagen</a>, en over de techniek bij <a href="/opties/pico-en-nano/">pico- en nanolaser</a>.</p>
 """
 
-KLEURWERK = """
+KLEURWERK = f"""
 <p class="intro">Kleur maakt werk levendig en verwijdering ingewikkeld. Elke kleur neemt licht van een eigen golflengte op, en niet elke kleur laat zich even goed opbreken.</p>
+
+{art.fig(art.kleuren(), "Hoe sterk een kleur op de laser reageert verschilt per pigment.")}
+
 
 <h2>Stijlen met veel kleur</h2>
 <table>
@@ -365,6 +392,8 @@ KLEURWERK = """
 <p>Rood en geel verbleken het snelst onder invloed van zonlicht, zwart en donkerblauw het traagst. Watercolour zonder zwarte basis verliest daardoor na een jaar of vijf zijn vorm. Wie kleurwerk lang mooi wil houden, beschermt de plek tegen de zon, ook los van een eventueel lasertraject.</p>
 
 <p>Meer per kleur bij <a href="/opties/kleuren/">kleur en laser</a>.</p>
+
+{video.embed("kleur")}
 """
 
 PAGES += [

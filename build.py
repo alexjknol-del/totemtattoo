@@ -4,6 +4,7 @@
 Gebruik: python3 build.py   -> schrijft dist/
 """
 import os, shutil, html
+import video
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 DIST = os.path.join(BASE, "dist")
@@ -112,8 +113,32 @@ footer.foot{border-top:1px solid var(--rule);margin-top:56px;padding:34px 0 40px
 .foot-cols a:hover{color:var(--accent)}
 .fine{border-top:1px solid var(--rule);margin-top:26px;padding-top:14px;
   font:12.5px/1.6 ui-sans-serif,system-ui,sans-serif;color:var(--ink-2)}
+
+figure.fig{margin:28px 0;border-top:1px solid var(--rule);padding-top:16px}
+figure.fig svg{display:block;width:100%;height:auto}
+figure.fig figcaption{font:12.5px/1.6 ui-sans-serif,system-ui,sans-serif;color:var(--ink-2);
+  margin-top:10px;letter-spacing:.03em;max-width:62ch}
+figure.fig.narrow{max-width:320px}
+figure.fig.plainfig{border-top:0;padding-top:0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:52px;align-items:center}
+.hero-grid figure.fig{margin:0;border-top:0;padding-top:0}
+.hero-grid figure.fig svg{max-height:420px}
+.orn{margin:34px 0 6px}
+.orn svg{display:block;width:100%;height:auto}
+.vid{border-top:2px solid var(--ink);padding-top:14px;margin:30px 0}
+.vkicker{font:12px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-2);margin:0 0 12px}
+.vbtn{display:flex;align-items:center;gap:16px;width:100%;text-align:left;cursor:pointer;
+  background:var(--paper-2);border:1px solid var(--rule);padding:14px 16px;margin:0 0 10px;
+  color:var(--ink);font:17px/1.4 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif}
+.vbtn:hover{border-color:var(--accent);color:var(--accent)}
+.vplay{width:38px;height:38px;flex:0 0 38px}
+.vnote{font:12.5px/1.6 ui-sans-serif,system-ui,sans-serif;color:var(--ink-2);margin:8px 0 0}
+.vframe{position:relative;padding-top:56.25%;margin:0 0 10px;background:var(--paper-2);border:1px solid var(--rule)}
+.vframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 @media(max-width:900px){
-  .split,.two,.foot-cols{grid-template-columns:1fr;gap:30px}
+  .split,.two,.foot-cols,.hero-grid{grid-template-columns:1fr;gap:30px}
+  .hero-grid figure.fig{max-width:280px}
   .index{position:static;border-top:1px solid var(--rule)}
   .masthead-in{flex-direction:column;align-items:flex-start;gap:6px}
 }
@@ -164,6 +189,7 @@ def page_html(p):
     {INDEXBOX}
   </div>
 </div>"""
+    vscript = video.SCRIPT if "vbtn" in body else ""
     return f"""<!doctype html>
 <html lang="nl">
 <head>
@@ -230,6 +256,7 @@ def page_html(p):
     <p class="fine">Bij twijfel over huid, littekens of medicijngebruik geldt het oordeel van een arts.</p>
   </div>
 </footer>
+{vscript}
 </body>
 </html>
 """

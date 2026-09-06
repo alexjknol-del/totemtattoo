@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Vestigingen."""
+import art, video
 
 def schema(name, street, postal, city, email):
     return f"""<script type="application/ld+json">
@@ -9,8 +10,11 @@ def schema(name, street, postal, city, email):
 "address":{{"@type":"PostalAddress","streetAddress":"{street}","postalCode":"{postal}","addressLocality":"{city}","addressCountry":"NL"}}}}
 </script>"""
 
-AMSTERDAM = """
+AMSTERDAM = f"""
 <p class="intro">De Amsterdamse vestiging zit aan de Bilderdijkstraat 77, in het pand van Gallery Salon Studio's, tussen De Hallen en het Kinkerkwartier. Liselotte Wannijn doet er de intakes en de behandelingen.</p>
+
+{art.fig(art.kaart(), "Amsterdam, Den Haag en Rotterdam, met Rotterdam als oudste vestiging.")}
+
 
 <h2>Praktisch</h2>
 <table>
@@ -44,9 +48,11 @@ AMSTERDAM = """
 </ul>
 
 <p>Wie in Zuid-Holland woont of werkt, zit dichter bij <a href="/den-haag/">Den Haag</a> of <a href="/rotterdam/">Rotterdam</a>. Een traject loopt over meerdere maanden, dus reistijd telt mee in de keuze.</p>
+
+{video.embed("consult")}
 """
 
-DENHAAG = """
+DENHAAG = f"""
 <p class="intro">Den Haag zit aan de Schuifmaat 16, unit 10, in Benoordenhout aan de rand van Wassenaar. Deniz van Reede opende deze vestiging in 2024.</p>
 
 <h2>Praktisch</h2>
@@ -73,9 +79,11 @@ DENHAAG = """
 <div class="plain">
   <p>Voor de eerste afspraak: drie weken geen zonnebank of felle zon op de plek, twee weken geen zelfbruiner, op de dag zelf scheren. De volledige voorbereiding staat bij <a href="/opties/laseren/">hoe laseren werkt</a>.</p>
 </div>
+
+{video.embed("kies")}
 """
 
-ROTTERDAM = """
+ROTTERDAM = f"""
 <p class="intro">Rotterdam is de oorspronkelijke locatie, aan de Oudedijk 400 in Kralingen. Andy Han behandelt er sinds 2010.</p>
 
 <h2>Praktisch</h2>
@@ -100,6 +108,8 @@ ROTTERDAM = """
 <p>De kliniek geeft een garantie wanneer een tattoo na afronding van het traject niet volledig verdwenen is. Voorwaarde is dat het nazorgadvies wordt opgevolgd, inclusief het gebruik van Alhydran na elke sessie. Om die reden wordt niet elk werk aangenomen. De voorwaarden staan op <a href="https://tattoonomore.nl/">tattoonomore.nl</a>.</p>
 
 <p>Vanuit Dordrecht, Gouda of Schiedam is Rotterdam meestal het dichtstbij. Voor Haaglanden is er <a href="/den-haag/">Den Haag</a>, voor Noord-Holland <a href="/amsterdam/">Amsterdam</a>.</p>
+
+{video.embed("altijd")}
 """
 
 PAGES = [

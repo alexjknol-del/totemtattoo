@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 """Opties en behandeling."""
+import art, video
 
-INDEX = """
+INDEX = f"""
 <p class="intro">Van niets doen tot volledig weghalen. Deze pagina's beschrijven wat elke route inhoudt en waar de grenzen liggen.</p>
+
+{art.fig(art.vervagen(), "Van volle tekening naar restpigment, in stappen van enkele sessies.")}
+
 
 <h2>De routes</h2>
 <div class="rows">
@@ -26,9 +30,11 @@ INDEX = """
 <div class="plain">
   <p>Niet elk werk komt in aanmerking. Stukken groter dan A5, eerder behandelde tattoos en bepaalde kleurpigmenten worden bij de intake apart beoordeeld of afgewezen, juist omdat de kliniek een resultaatgarantie geeft.</p>
 </div>
+
+{video.embed("duur")}
 """
 
-AANPASSEN = """
+AANPASSEN = f"""
 <p class="intro">De snelste route loopt via de tattoo-artiest: bijwerken, aanvullen of er iets nieuws overheen zetten. Dat werkt, zolang het oude werk ruimte laat.</p>
 
 <h2>Wat een artiest kan</h2>
@@ -52,10 +58,15 @@ AANPASSEN = """
 </ol>
 
 <p>Wie twijfelt tussen aanpassen en weghalen, komt meestal uit bij de vraag uit <a href="/spijt/">waarom de spijt ontstond</a>. Zit het in de vorm, dan helpt aanpassen. Zit het in de betekenis, dan zelden.</p>
+
+{video.embed("coveren")}
 """
 
-VERVAGEN = """
+VERVAGEN = f"""
 <p class="intro">Vervagen is geen half werk maar een eigen doel: genoeg pigment weghalen zodat een artiest weer vrij kan ontwerpen.</p>
+
+{art.fig(art.vervagen(), "Vervagen stopt halverwege: genoeg pigment weg om een artiest ruimte te geven.")}
+
 
 <h2>Wat het inhoudt</h2>
 <p>Technisch is het dezelfde behandeling als volledig verwijderen, alleen wordt er eerder gestopt. In plaats van acht tot twaalf sessies gaat het meestal om drie tot vijf. De tattoo is dan nog zichtbaar, maar zoveel lichter dat het nieuwe ontwerp niet meer hoeft te bedekken.</p>
@@ -81,8 +92,11 @@ VERVAGEN = """
 <p>Na de laatste sessie moet de huid volledig herstellen voordat er weer inkt in gaat. Wat daarbij hoort staat bij <a href="/opties/nazorg/">nazorg</a>.</p>
 """
 
-LASEREN = """
+LASEREN = f"""
 <p class="intro">Een tattoo zit in de lederhuid, buiten bereik van de natuurlijke vernieuwing van huidcellen. Daarom blijft inkt levenslang zitten, en daarom is er een laser nodig om dat te doorbreken.</p>
+
+{art.fig(art.laser(), "De puls breekt het pigment in de lederhuid. Het lymfestelsel voert de deeltjes daarna af.")}
+
 
 <h2>Wat er gebeurt</h2>
 <p>Pigmentdeeltjes zijn te groot om door het lichaam afgevoerd te worden. Afweercellen kapselen ze in en houden ze op hun plek. De laser stuurt een zeer korte lichtpuls af die vooral door het pigment wordt opgenomen en veel minder door het weefsel eromheen. Het deeltje warmt in een fractie van een seconde op, zet uit en valt in kleinere stukken uiteen.</p>
@@ -102,9 +116,11 @@ LASEREN = """
 
 <h2>Waarom niet in een keer</h2>
 <p>Per sessie wordt een deel van het pigment opgebroken. Wat overblijft ligt dieper of werd afgeschermd door de laag erboven. Pas als de eerste laag is afgevoerd, komt de laser bij de volgende. Zie <a href="/opties/sessies/">aantal sessies</a> en <a href="/opties/wachttijd/">wachttijd</a>.</p>
+
+{video.embed("pijn")}
 """
 
-PICONANO = """
+PICONANO = f"""
 <p class="intro">Het verschil tussen een nanolaser en een picolaser zit in de duur van de puls. Die duur bepaalt of pigment vooral door warmte of vooral door druk uiteenvalt.</p>
 
 <h2>Twee soorten pulsen</h2>
@@ -129,10 +145,15 @@ PICONANO = """
   <li>Wordt er met een testplekje gewerkt bij twijfelachtige pigmenten.</li>
 </ul>
 <p>De klinieken achter deze site werken met een nanolaser en een picolaser, allebei CE-gecertificeerd voor medisch gebruik.</p>
+
+{video.embed("pijnvrij")}
 """
 
-SESSIES = """
+SESSIES = f"""
 <p class="intro">Bij ongeveer zeventig procent van de klanten is de tattoo binnen acht tot twaalf sessies weg. Die bandbreedte komt door zes factoren.</p>
+
+{art.fig(art.sessies(), "Per sessie verdwijnt een deel van het pigment. De eerste sessies leveren het meeste zichtbare verschil.")}
+
 
 <table>
   <tr><th>Factor</th><th>Effect</th></tr>
@@ -153,6 +174,8 @@ SESSIES = """
 <div class="pull">De eerste sessies leveren het meest zichtbare verschil op. Het laatste stuk kost de meeste sessies terwijl het op foto's het minst opvalt.</div>
 
 <p>Voorbeelden van afgeronde trajecten staan op <a href="https://tattoonomore.nl/fotos/">https://tattoonomore.nl/fotos/</a>.</p>
+
+{video.embed("aantal")}
 """
 
 PAGES = [
@@ -188,8 +211,11 @@ PAGES = [
      "body": SESSIES},
 ]
 
-WACHTTIJD = """
+WACHTTIJD = f"""
 <p class="intro">Tussen twee sessies zitten weken. Dat is geen kwestie van agenda maar een voorwaarde voor het resultaat.</p>
+
+{art.fig(art.tijdlijn(), "Een volledig traject loopt vaak over ruim een jaar, omdat het lichaam tussen de sessies tijd nodig heeft.")}
+
 
 <h2>Wat er in die weken gebeurt</h2>
 <p>De laser breekt pigment op, het lymfestelsel voert het af. Dat kost tijd. Wordt er te snel opnieuw gelaserd, dan ligt het oude, kapotgeschoten pigment nog in de huid en neemt dat de energie op die voor de diepere laag bedoeld was. Minder vooruitgang, meer belasting.</p>
@@ -214,10 +240,15 @@ WACHTTIJD = """
 <div class="plain">
   <p>Een zonvakantie kost zes weken in het schema: drie weken voor en drie weken na een sessie moet de plek uit de felle zon blijven.</p>
 </div>
+
+{video.embed("interval")}
 """
 
-NAZORG = """
+NAZORG = f"""
 <p class="intro">Wat er in de dagen na een sessie gebeurt, bepaalt een groot deel van het resultaat. Nazorg is bovendien de voorwaarde voor de garantie die de kliniek geeft.</p>
+
+{art.fig(art.nazorg(), "Drie punten die het genezen sturen: zon vermijden, koelen en de plek afgedekt houden.")}
+
 
 <h2>De eerste uren</h2>
 <p>Direct na het laseren kleurt de huid wit op de behandelde plek. Die gasreactie trekt binnen ongeveer een halfuur weg. Daarna volgen roodheid en zwelling, vergelijkbaar met een lichte zonnebrand. In de kliniek gaat er Alhydran op, dat de plek vochtig houdt tijdens het genezen.</p>
@@ -244,10 +275,15 @@ NAZORG = """
 <h2>Waarom de zalf een voorwaarde is</h2>
 <p>Een huid die tijdens het genezen uitdroogt, vormt dikkere korsten en herstelt trager. Dat vraagt extra sessies en vergroot de kans op een blijvend zichtbaar plekje. Omdat de kliniek een garantie op het eindresultaat geeft, hoort het gebruik van Alhydran bij de afspraak.</p>
 <p>Meer over wat er mis kan gaan bij <a href="/opties/risicos/">risico's</a>.</p>
+
+{video.embed("sporten")}
 """
 
-HUIDTYPE = """
+HUIDTYPE = f"""
 <p class="intro">Bij laserverwijdering telt niet alleen de kleur van de inkt, maar ook die van de huid. Melanine neemt namelijk hetzelfde licht op als het pigment.</p>
+
+{art.fig(art.huidtypen(), "Huidtype bepaalt mede welke golflengte en energie gekozen worden.")}
+
 
 <h2>De indeling van Fitzpatrick</h2>
 <table>
@@ -267,10 +303,15 @@ HUIDTYPE = """
 
 <h2>Zon en bruining</h2>
 <p>Een gebruinde huid bevat tijdelijk meer melanine en gedraagt zich onder de laser als een donkerder type. Vandaar de regel van drie weken geen zonnebank of felle zon voor en na een sessie, en twee weken geen zelfbruinende creme. Een kliniek die daar niet naar vraagt, slaat een stap over.</p>
+
+{video.embed("iedereen")}
 """
 
-KLEUREN = """
+KLEUREN = f"""
 <p class="intro">Elke kleur inkt absorbeert licht van een eigen golflengte. Dat verklaart waarom zwart snel weggaat en groen niet.</p>
+
+{art.fig(art.kleuren(), "Zwart en donkerblauw nemen het licht het best op, geel en pastel het minst.")}
+
 
 <table>
   <tr><th>Kleur</th><th>Reactie op laser</th></tr>
@@ -290,9 +331,11 @@ KLEUREN = """
 <p>Twee tattoos die er even zwart uitzien kunnen totaal anders reageren, omdat de samenstelling per fabrikant en per serie verschilt. Sinds januari 2022 gelden in de Europese Unie strengere eisen aan tattoo-inkt onder de REACH-verordening, waardoor een deel van de eerder gebruikte pigmenten van de markt is. Wie ouder werk laat weghalen, heeft dus vaak pigment in de huid uit een periode met andere samenstellingen.</p>
 
 <p>Zie ook <a href="/stijlen/kleurwerk/">kleurwerk</a> en <a href="/opties/pico-en-nano/">pico- en nanolaser</a>.</p>
+
+{video.embed("kleur")}
 """
 
-PMU = """
+PMU = f"""
 <p class="intro">Wenkbrauwen, eyeliner en lipcontouren zitten minder diep dan een tattoo, maar de pigmenten zijn onvoorspelbaarder.</p>
 
 <h2>Waarom PMU anders is</h2>
@@ -315,7 +358,7 @@ PMU = """
 <p>PMU wordt op alle drie de locaties behandeld: <a href="/amsterdam/">Amsterdam</a>, <a href="/den-haag/">Den Haag</a> en <a href="/rotterdam/">Rotterdam</a>.</p>
 """
 
-RISICOS = """
+RISICOS = f"""
 <p class="intro">Laserverwijdering is een ingreep op de huid. De meeste reacties horen bij het genezen, een klein deel is te voorkomen en een enkele vraagt een arts.</p>
 
 <h2>Wat bij het proces hoort</h2>
@@ -343,6 +386,8 @@ RISICOS = """
 </ul>
 
 <div class="pull">Een kliniek die vooraf niet vraagt naar medicijnen, huidaandoeningen, zonblootstelling en eerdere behandelingen, slaat een stap over die ertoe doet.</div>
+
+{video.embed("risico") + video.embed("littekens")}
 """
 
 PAGES += [

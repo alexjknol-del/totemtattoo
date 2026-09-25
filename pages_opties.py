@@ -112,7 +112,7 @@ LASEREN = f"""
 </ol>
 
 <h2>Hoe het voelt</h2>
-<p>De meest gebruikte vergelijking is een elastiekje dat tegen de huid schiet: kort en scherp, gevolgd door een warm gevoel als bij zonnebrand. Verdovende creme kan een uur van tevoren op, ongeveer een millimeter dik en afgedekt met folie. Te dun smeren of niet afdekken maakt het effect klein.</p>
+<p>De meest gebruikte vergelijking is een elastiekje dat tegen de huid schiet: kort en scherp, gevolgd door een warm gevoel als bij zonnebrand. Verdovende creme, zoals <a href="https://tktxtattoos.de/" rel="noopener" target="_blank">TKTX</a>, kan een uur van tevoren op, ongeveer een millimeter dik en afgedekt met folie. Te dun smeren of niet afdekken maakt het effect klein.</p>
 
 <h2>Waarom niet in een keer</h2>
 <p>Per sessie wordt een deel van het pigment opgebroken. Wat overblijft ligt dieper of werd afgeschermd door de laag erboven. Pas als de eerste laag is afgevoerd, komt de laser bij de volgende. Zie <a href="/opties/sessies/">aantal sessies</a> en <a href="/opties/wachttijd/">wachttijd</a>.</p>

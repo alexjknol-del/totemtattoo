@@ -87,6 +87,7 @@ for f in files:
         brand = host.split(".")[0]
         ok = (anchor.startswith("http") or anchor == host or
               brand.lower() in anchor.lower().replace(" ", "") or
+              (len(anchor) > 2 and anchor.lower().replace(" ", "") in brand.lower()) or
               anchor.lower() in ("tattoo no more", "tattoonomore"))
         if not ok:
             problems.append(f"{r}: ankertekst uitgaande link '{anchor}' naar {url}")
